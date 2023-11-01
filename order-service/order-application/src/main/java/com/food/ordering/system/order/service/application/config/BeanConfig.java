@@ -1,4 +1,4 @@
-package com.food.ordering.system.order.service.application;
+package com.food.ordering.system.order.service.application.config;
 
 import com.food.ordering.system.order.service.domain.OrderDomainService;
 import com.food.ordering.system.order.service.domain.OrderDomainServiceImpl;

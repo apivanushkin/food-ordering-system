@@ -42,11 +42,6 @@
             </dependency>
             <dependency>
                 <groupId>com.food.ordering.system</groupId>
-                <artifactId>order-application</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.food.ordering.system</groupId>
                 <artifactId>order-application-service</artifactId>
                 <version>${revision}</version>
             </dependency>

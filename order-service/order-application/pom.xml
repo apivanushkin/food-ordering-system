@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>order-application</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

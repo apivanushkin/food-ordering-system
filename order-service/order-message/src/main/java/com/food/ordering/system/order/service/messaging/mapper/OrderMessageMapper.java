@@ -1,6 +1,8 @@
 package com.food.ordering.system.order.service.messaging.mapper;
 
 import com.food.ordering.system.kafka.model.*;
+import com.food.ordering.system.order.service.domain.dto.PaymentResponse;
+import com.food.ordering.system.order.service.domain.dto.RestaurantResponse;
 import com.food.ordering.system.order.service.domain.entity.OrderItem;
 import com.food.ordering.system.order.service.domain.event.OrderCanceledEvent;
 import com.food.ordering.system.order.service.domain.event.OrderCreatedEvent;
@@ -14,8 +16,8 @@ import java.util.UUID;
 @Component
 public class OrderMessageMapper {
 
-    public PaymentRequest toPaymentRequest(OrderCreatedEvent event) {
-        return PaymentRequest.newBuilder()
+    public PaymentRequestModel toPaymentRequest(OrderCreatedEvent event) {
+        return PaymentRequestModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
                 .setCustomerId(event.order().customerId().value().toString())
@@ -26,8 +28,8 @@ public class OrderMessageMapper {
                 .build();
     }
 
-    public PaymentRequest toPaymentRequest(OrderCanceledEvent event) {
-        return PaymentRequest.newBuilder()
+    public PaymentRequestModel toPaymentRequest(OrderCanceledEvent event) {
+        return PaymentRequestModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
                 .setOrderId(event.order().id().value().toString())
@@ -38,8 +40,8 @@ public class OrderMessageMapper {
                 .build();
     }
 
-    public RestaurantApprovalRequest toRestaurantApprovalRequest(OrderPaidEvent event) {
-        return RestaurantApprovalRequest.newBuilder()
+    public RestaurantRequestModel toRestaurantApprovalRequest(OrderPaidEvent event) {
+        return RestaurantRequestModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
                 .setOrderId(event.order().id().value().toString())
@@ -49,6 +51,14 @@ public class OrderMessageMapper {
                 .setCreatedAt(event.createdAt().toInstant())
                 .setRestaurantOrderStatus(RestaurantOrderStatus.PAID)
                 .build();
+    }
+
+    public PaymentResponse toPaymentReponse(PaymentResponseModel model) {
+        return null;
+    }
+
+    public RestaurantResponse toRestaurantResponse(RestaurantResponseModel model) {
+        return null;
     }
 
     private List<Product> toProducts(List<OrderItem> items) {

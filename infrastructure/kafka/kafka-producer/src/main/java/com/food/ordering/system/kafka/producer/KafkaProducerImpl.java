@@ -23,16 +23,17 @@ public class KafkaProducerImpl<K extends Serializable, V extends SpecificRecordB
 
     @Override
     public void send(String topicName, K key, V message, BiConsumer<SendResult<K, V>, Throwable> callback) {
-        log.info("Sending message with key={} to topic={}", key, topicName);
+        log.info("Sending message with key={} to topic {}", key, topicName);
         try {
             kafkaTemplate.send(topicName, key, message).whenComplete(callback);
         } catch (KafkaException e) {
-            log.error("An error occurred while sending message with key={}", key);
+            log.error("An error occurred during sending message with key={} to topic {}", key, topicName);
             throw new KafkaProducerException("message sending failed");
         }
     }
 
     @PreDestroy
+    @SuppressWarnings("unused")
     public void close() {
         if (Objects.nonNull(kafkaTemplate)) {
             log.info("Closing gracefully");

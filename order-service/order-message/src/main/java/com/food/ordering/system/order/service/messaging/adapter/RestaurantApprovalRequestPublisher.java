@@ -1,6 +1,6 @@
 package com.food.ordering.system.order.service.messaging.adapter;
 
-import com.food.ordering.system.kafka.model.RestaurantApprovalRequest;
+import com.food.ordering.system.kafka.model.RestaurantRequestModel;
 import com.food.ordering.system.kafka.producer.KafkaProducer;
 import com.food.ordering.system.order.service.domain.event.OrderPaidEvent;
 import com.food.ordering.system.order.service.domain.port.output.publisher.OrderPaidEventPublisher;
@@ -18,7 +18,7 @@ public class RestaurantApprovalRequestPublisher implements OrderPaidEventPublish
 
     private final OrderMessageConfigData configData;
     private final KafkaMessageHelper kafkaMessageHelper;
-    private final KafkaProducer<String, RestaurantApprovalRequest> kafkaProducer;
+    private final KafkaProducer<String, RestaurantRequestModel> kafkaProducer;
     private final OrderMessageMapper orderMessageMapper;
 
     @Override

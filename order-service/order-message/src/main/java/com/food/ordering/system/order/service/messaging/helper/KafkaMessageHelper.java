@@ -11,8 +11,8 @@ import java.util.function.BiConsumer;
 @Slf4j
 public class KafkaMessageHelper {
 
-    private static final String SUCCESS_MESSAGE_TEMPLATE = "Message with key={} was sent to topic={} with offset={}";
-    private static final String FAILURE_MESSAGE_TEMPLATE = "Failed to send message with key={}";
+    private static final String SUCCESS_MESSAGE_TEMPLATE = "Message with key={} was sent to topic {} with offset={}";
+    private static final String FAILURE_MESSAGE_TEMPLATE = "Could not send message with key={}";
 
     public <T> BiConsumer<SendResult<String, T>, Throwable> callback() {
         return (result, ex) -> {

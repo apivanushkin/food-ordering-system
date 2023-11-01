@@ -1,6 +1,6 @@
 package com.food.ordering.system.order.service.messaging.adapter;
 
-import com.food.ordering.system.kafka.model.PaymentRequest;
+import com.food.ordering.system.kafka.model.PaymentRequestModel;
 import com.food.ordering.system.kafka.producer.KafkaProducer;
 import com.food.ordering.system.order.service.domain.event.OrderCanceledEvent;
 import com.food.ordering.system.order.service.domain.event.OrderCreatedEvent;
@@ -20,7 +20,7 @@ public class PaymentRequestPublisher implements OrderCreatedEventPublisher, Orde
 
     private final OrderMessageConfigData orderMessageConfigData;
     private final KafkaMessageHelper kafkaMessageHelper;
-    private final KafkaProducer<String, PaymentRequest> kafkaProducer;
+    private final KafkaProducer<String, PaymentRequestModel> kafkaProducer;
     private final OrderMessageMapper orderMessageMapper;
 
     @Override
