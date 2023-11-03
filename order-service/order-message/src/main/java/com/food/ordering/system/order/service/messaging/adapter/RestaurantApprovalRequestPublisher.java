@@ -24,7 +24,7 @@ public class RestaurantApprovalRequestPublisher implements OrderPaidEventPublish
     @Override
     public void publish(OrderPaidEvent event) {
         kafkaProducer.send(
-                configData.getRestaurantApprovalRequestTopicName(),
+                configData.getRestaurantApprovalRequestTopic(),
                 event.order().id().toString(),
                 orderMessageMapper.toRestaurantApprovalRequest(event),
                 kafkaMessageHelper.callback());

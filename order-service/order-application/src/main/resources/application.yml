@@ -21,11 +21,10 @@ logging:
     com.food.ordering.system: ${LOGGING_LEVEL:DEBUG}
 
 order-service:
-  payment-request-topic-name: payment-request
-  payment-response-topic-name: payment-response
-  restaurant-request-topic-name: restaurant-request
-  restaurant-response-topic-name: restaurant-response
-  customer-topic-name: customer
+  payment-request-topic: payment-request
+  payment-response-topic: payment-response
+  restaurant-request-topic: restaurant-request
+  restaurant-response-topic: restaurant-response
   outbox-scheduler-fixed-rate: 10000
   outbox-scheduler-initial-delay: 10000
 

@@ -26,7 +26,7 @@ public class PaymentRequestPublisher implements OrderCreatedEventPublisher, Orde
     @Override
     public void publish(OrderCreatedEvent event) {
         kafkaProducer.send(
-                orderMessageConfigData.getPaymentRequestTopicName(),
+                orderMessageConfigData.getPaymentRequestTopic(),
                 event.order().id().toString(),
                 orderMessageMapper.toPaymentRequest(event),
                 kafkaMessageHelper.callback());
@@ -35,7 +35,7 @@ public class PaymentRequestPublisher implements OrderCreatedEventPublisher, Orde
     @Override
     public void publish(OrderCanceledEvent event) {
         kafkaProducer.send(
-                orderMessageConfigData.getPaymentRequestTopicName(),
+                orderMessageConfigData.getPaymentRequestTopic(),
                 event.order().id().toString(),
                 orderMessageMapper.toPaymentRequest(event),
                 kafkaMessageHelper.callback());
