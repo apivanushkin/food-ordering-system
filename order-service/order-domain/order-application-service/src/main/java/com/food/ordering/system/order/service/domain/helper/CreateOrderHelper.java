@@ -9,7 +9,7 @@ import com.food.ordering.system.order.service.domain.mapper.OrderMapper;
 import com.food.ordering.system.order.service.domain.port.output.repository.CustomerRepository;
 import com.food.ordering.system.order.service.domain.port.output.repository.OrderRepository;
 import com.food.ordering.system.order.service.domain.port.output.repository.RestaurantRepository;
-import com.food.ordering.system.order.service.domain.value.CustomerId;
+import com.food.ordering.system.domain.value.CustomerId;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

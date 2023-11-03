@@ -6,7 +6,7 @@ import com.food.ordering.system.order.service.data.order.entity.OrderItemEntity;
 import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.entity.OrderItem;
 import com.food.ordering.system.order.service.domain.entity.Product;
-import com.food.ordering.system.order.service.domain.value.CustomerId;
+import com.food.ordering.system.domain.value.CustomerId;
 import com.food.ordering.system.order.service.domain.value.OrderItemId;
 import com.food.ordering.system.order.service.domain.value.TrackingId;
 import org.springframework.stereotype.Component;

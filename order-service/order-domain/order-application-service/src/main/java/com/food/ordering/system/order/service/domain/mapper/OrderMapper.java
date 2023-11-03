@@ -11,7 +11,7 @@ import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.entity.OrderItem;
 import com.food.ordering.system.order.service.domain.entity.Product;
 import com.food.ordering.system.order.service.domain.entity.Restaurant;
-import com.food.ordering.system.order.service.domain.value.CustomerId;
+import com.food.ordering.system.domain.value.CustomerId;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

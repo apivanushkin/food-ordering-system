@@ -2,7 +2,7 @@ package com.food.ordering.system.order.service.data.customer.adapter;
 
 import com.food.ordering.system.order.service.data.customer.repository.CustomerJpaRepository;
 import com.food.ordering.system.order.service.domain.port.output.repository.CustomerRepository;
-import com.food.ordering.system.order.service.domain.value.CustomerId;
+import com.food.ordering.system.domain.value.CustomerId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

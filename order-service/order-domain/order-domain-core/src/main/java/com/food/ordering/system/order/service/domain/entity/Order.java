@@ -3,7 +3,7 @@ package com.food.ordering.system.order.service.domain.entity;
 import com.food.ordering.system.domain.entity.AggregateRoot;
 import com.food.ordering.system.domain.value.*;
 import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
-import com.food.ordering.system.order.service.domain.value.CustomerId;
+import com.food.ordering.system.domain.value.CustomerId;
 import com.food.ordering.system.order.service.domain.value.OrderItemId;
 import com.food.ordering.system.order.service.domain.value.TrackingId;
 

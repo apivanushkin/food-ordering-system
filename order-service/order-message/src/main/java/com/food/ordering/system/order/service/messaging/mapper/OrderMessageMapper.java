@@ -53,7 +53,7 @@ public class OrderMessageMapper {
                 .build();
     }
 
-    public PaymentResponse toPaymentReponse(PaymentResponseModel model) {
+    public PaymentResponse toPaymentResponse(PaymentResponseModel model) {
         return null;
     }
 

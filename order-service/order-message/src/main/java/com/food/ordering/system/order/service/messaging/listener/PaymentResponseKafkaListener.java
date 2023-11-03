@@ -41,7 +41,7 @@ public class PaymentResponseKafkaListener implements KafkaConsumer<PaymentRespon
 
     private void process(PaymentResponseModel message) {
         log.info(PROCESSING_MESSAGE, message.getPaymentStatus(), message.getOrderId());
-        final var response = orderMessageMapper.toPaymentReponse(message);
+        final var response = orderMessageMapper.toPaymentResponse(message);
         switch (message.getPaymentStatus()) {
             case COMPLETED -> paymentResponseListener.paymentCompleted(response);
             case FAILED, CANCELLED -> paymentResponseListener.paymentCanceled(response);
